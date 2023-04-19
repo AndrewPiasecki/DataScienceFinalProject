@@ -1,0 +1,448 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Uncovering Insights from Super Bowls: An In-Depth Examination},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Uncovering Insights from Super Bowls: An In-Depth Examination}
+\author{}
+\date{\vspace{-2.5em}2023-03-18}
+
+\begin{document}
+\maketitle
+
+\hypertarget{team-members}{%
+\subsection{Team Members}\label{team-members}}
+
+\textbf{Andrew Piasecki}
+\href{mailto:apiasecki0881@floridapoly.edu}{Email}
+
+\emph{That's it}
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Welcome to the Super Bowl extravaganza, where we'll be digging into the
+game's juiciest stats and facts! From the biggest crowds to the
+winningest teams, we've got it all covered. So, grab your popcorn and
+foam fingers, and let's get ready to rumble with some bullet-point
+highlights:
+
+🏈 Attendance Over the Years: How has the turnout at Super Bowl games
+changed? We'll be exploring the rise and fall of attendance numbers,
+from the early days to the modern era, because bigger isn't always
+better!
+
+🏆 Winning Teams: Who's the real champ of Super Bowl history? We'll
+reveal which teams have racked up the most wins, who's been on top of
+the podium the most times, and who's still hungry for that Lombardi
+Trophy!
+
+🔢 Average Point Difference: What's the real score when it comes to
+game-day blowouts? We'll crunch the numbers to uncover the average point
+difference between the winning and losing teams in Super Bowl showdowns,
+from nail-biters to landslide victories!
+
+🏅 MVP Magic: In this analysis, we'll be diving into the data and using
+ggplot to create a true/false table to determine if the Most Valuable
+Player (MVP) and the Quarterback (QB) winner in each game are the same
+player. Get ready to explore the thrilling world of football
+championships and discover if these two crucial roles are often filled
+by the same talented individual.
+
+\hypertarget{useful-tips}{%
+\subsection{Useful Tips}\label{useful-tips}}
+
+\texttt{ctrl\ -\ Alt\ -\ I\ for\ R\ code\ chunks}
+\texttt{ctrl\ -\ Shift\ -\ M\ for\ Pipe\ Operation}
+
+\hypertarget{prerequisites}{%
+\section{Prerequisites}\label{prerequisites}}
+
+\emph{Loading Packages}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.0     v readr     2.1.4
+## v forcats   1.0.0     v stringr   1.5.0
+## v ggplot2   3.4.1     v tibble    3.1.8
+## v lubridate 1.9.2     v tidyr     1.3.0
+## v purrr     1.0.1     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{library}\NormalTok{(scales)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'scales'
+## 
+## The following object is masked from 'package:purrr':
+## 
+##     discard
+## 
+## The following object is masked from 'package:readr':
+## 
+##     col_factor
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tibble)}
+\FunctionTok{library}\NormalTok{(lubridate)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{super-bowl-data-set}{%
+\subsection{Super Bowl Data Set}\label{super-bowl-data-set}}
+
+GitHub Data shown Below
+\href{https://github.com/reisanar/datasets/blob/master/super_bowl.csv}{Super
+Bowl Link}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# read data given by Professor Sanchez{-}Arias}
+
+\NormalTok{myurl }\OtherTok{\textless{}{-}} \StringTok{"https://raw.githubusercontent.com/reisanar/datasets/master/super\_bowl.csv"}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(myurl)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 52 Columns: 23
+## -- Column specification --------------------------------------------------------
+## Delimiter: ","
+## chr (19): Date, SB, QB_Winner, Coach_Winner, Winner, QB_Loser, Coach_Loser, ...
+## dbl  (4): Attendance, Winning_Pts, Losing_Pts, Point_Difference
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\hypertarget{attendance-change-over-the-years}{%
+\section{Attendance change over the
+years}\label{attendance-change-over-the-years}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date, }\AttributeTok{y =}\NormalTok{ Attendance)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Super Bowl Attendance"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{guides}\NormalTok{(}\AttributeTok{x =}  \FunctionTok{guide\_axis}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{labels =} \ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{format}\NormalTok{(x, }\AttributeTok{scientific =} \ConstantTok{FALSE}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProject_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\hypertarget{most-super-bowl-wins}{%
+\section{Most Super Bowl wins}\label{most-super-bowl-wins}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{TeamWins }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(data}\SpecialCharTok{$}\StringTok{\textquotesingle{}Winner\textquotesingle{}}\NormalTok{) }
+\NormalTok{TeamWins}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      Baltimore Colts     Baltimore Ravens        Chicago Bears 
+##                    1                    2                    1 
+##       Dallas Cowboys       Denver Broncos    Green Bay Packers 
+##                    5                    3                    4 
+##   Indianapolis Colts   Kansas City Chiefs  Los Angeles Raiders 
+##                    1                    1                    1 
+##       Miami Dolphins New England Patriots   New Orleans Saints 
+##                    2                    5                    1 
+##      New York Giants        New York Jets      Oakland Raiders 
+##                    4                    1                    2 
+##  Philadelphia Eagles  Pittsburgh Steelers  San Francisco 49ers 
+##                    1                    6                    5 
+##     Seattle Seahawks       St. Louis Rams Tampa Bay Buccaneers 
+##                    1                    1                    1 
+##  Washington Redskins 
+##                    3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{TeamWins\_df }\OtherTok{\textless{}{-}} \FunctionTok{as.data.frame}\NormalTok{(TeamWins)}
+\NormalTok{TeamWins\_df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    Var1 Freq
+## 1       Baltimore Colts    1
+## 2      Baltimore Ravens    2
+## 3         Chicago Bears    1
+## 4        Dallas Cowboys    5
+## 5        Denver Broncos    3
+## 6     Green Bay Packers    4
+## 7    Indianapolis Colts    1
+## 8    Kansas City Chiefs    1
+## 9   Los Angeles Raiders    1
+## 10       Miami Dolphins    2
+## 11 New England Patriots    5
+## 12   New Orleans Saints    1
+## 13      New York Giants    4
+## 14        New York Jets    1
+## 15      Oakland Raiders    2
+## 16  Philadelphia Eagles    1
+## 17  Pittsburgh Steelers    6
+## 18  San Francisco 49ers    5
+## 19     Seattle Seahawks    1
+## 20       St. Louis Rams    1
+## 21 Tampa Bay Buccaneers    1
+## 22  Washington Redskins    3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{TeamWins\_df }\OtherTok{\textless{}{-}}\NormalTok{ TeamWins\_df[}\FunctionTok{order}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{TeamWins\_df}\SpecialCharTok{$}\NormalTok{Freq), ]}
+\NormalTok{TeamWins\_df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    Var1 Freq
+## 17  Pittsburgh Steelers    6
+## 4        Dallas Cowboys    5
+## 11 New England Patriots    5
+## 18  San Francisco 49ers    5
+## 6     Green Bay Packers    4
+## 13      New York Giants    4
+## 5        Denver Broncos    3
+## 22  Washington Redskins    3
+## 2      Baltimore Ravens    2
+## 10       Miami Dolphins    2
+## 15      Oakland Raiders    2
+## 1       Baltimore Colts    1
+## 3         Chicago Bears    1
+## 7    Indianapolis Colts    1
+## 8    Kansas City Chiefs    1
+## 9   Los Angeles Raiders    1
+## 12   New Orleans Saints    1
+## 14        New York Jets    1
+## 16  Philadelphia Eagles    1
+## 19     Seattle Seahawks    1
+## 20       St. Louis Rams    1
+## 21 Tampa Bay Buccaneers    1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(TeamWins\_df, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Var1, }\AttributeTok{y =}\NormalTok{ Freq)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{guides}\NormalTok{(}\AttributeTok{x =}  \FunctionTok{guide\_axis}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Super Bowl Wins by Team"}\NormalTok{,}
+        \AttributeTok{x =} \StringTok{"Team"}\NormalTok{,}
+        \AttributeTok{y=} \StringTok{"Wins"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProject_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\hypertarget{winning-vs-losing-scores}{%
+\section{Winning vs Losing Scores}\label{winning-vs-losing-scores}}
+
+We are calculating the average scores, throughout all the \textbf{Super
+Bowls}, and taking the average of both the winning and losing scores. I
+also utilized \emph{ggplot} to plot the Losing and Winning Points.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{average\_win\_points }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Winning\_Pts)}
+\NormalTok{average\_win\_points}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 30.42308
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{average\_losing\_points }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Losing\_Pts)}
+\NormalTok{average\_losing\_points}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 16.38462
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{average\_win\_points }\SpecialCharTok{{-}}\NormalTok{ average\_losing\_points}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 14.03846
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date, }\AttributeTok{y =}\NormalTok{ Winning\_Pts, }\AttributeTok{color =} \StringTok{"Winning\_Pts"}\NormalTok{), }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Date, }\AttributeTok{y =}\NormalTok{ Losing\_Pts, }\AttributeTok{color =} \StringTok{"Losing\_Pts"}\NormalTok{), }\AttributeTok{size =} \DecValTok{3}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(}\StringTok{"Winning\_Pts"} \OtherTok{=} \StringTok{"darkgreen"}\NormalTok{, }\StringTok{"Losing\_Pts"} \OtherTok{=} \StringTok{"blue"}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{guides}\NormalTok{(}\AttributeTok{x =} \FunctionTok{guide\_axis}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{color =} \StringTok{"Points Type"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Winning and Losing Points Over Time"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{xlab}\NormalTok{(}\StringTok{"Date"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Points"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProject_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{mvp-awards}{%
+\section{MVP Awards}\label{mvp-awards}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{QB\_and\_MVP }\OtherTok{\textless{}{-}}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{MVP }\SpecialCharTok{==}\NormalTok{ data}\SpecialCharTok{$}\NormalTok{QB\_Winner}
+
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ QB\_and\_MVP)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"count"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{scale\_x\_discrete}\NormalTok{(}\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"False"}\NormalTok{, }\StringTok{"True"}\NormalTok{)) }\SpecialCharTok{+} 
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"MVP and QB are the same player?"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"MVP and QB Winner are the Same"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Count"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{FinalProject_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+Over the years, what percentage of \textbf{Super Bowl MVPs} have been
+\textbf{Quarter Backs}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Percentage\_QB\_MVP }\OtherTok{\textless{}{-}}\NormalTok{ (}\DecValTok{28} \SpecialCharTok{/} \DecValTok{53}\NormalTok{) }\SpecialCharTok{*} \DecValTok{100}
+\NormalTok{Percentage\_QB\_MVP}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 52.83019
+\end{verbatim}
+
+\end{document}

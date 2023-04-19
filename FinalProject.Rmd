@@ -1,0 +1,193 @@
+---
+title: "Uncovering Insights from Super Bowls: An In-Depth Examination"
+output:
+  html_notebook:
+    toc: yes
+    toc_float: yes
+    theme: united
+  html_document:
+    toc: yes
+    df_print: paged
+date: "2023-04-18"
+---
+## Team Members
+**Andrew Piasecki** <br> [Email](mailto:apiasecki0881@floridapoly.edu)
+
+*That's it* 
+
+
+
+# Introduction
+
+Welcome to the Super Bowl extravaganza, where we'll be digging into the game's juiciest stats and facts! From the biggest crowds to the winningest teams, we've got it all covered. So, grab your popcorn and foam fingers, and let's get ready to rumble with some bullet-point highlights:
+
+🏈 **Attendance Over the Years**: How has the turnout at Super Bowl games changed? We'll be exploring the rise and fall of attendance numbers, from the early days to the modern era, because bigger isn't always better!
+
+🏆 **Winning Teams**: Who's the real champ of Super Bowl history? We'll reveal which teams have racked up the most wins, who's been on top of the podium the most times, and who's still hungry for that Lombardi Trophy!
+
+🔢 **Average Point Difference**: What's the real score when it comes to game-day blowouts? We'll crunch the numbers to uncover the average point difference between the winning and losing teams in Super Bowl showdowns, from nail-biters to landslide victories!
+
+🏅 **MVP Magic**: In this analysis, we'll be diving into the data and using ggplot to create a true/false table to determine if the Most Valuable Player (MVP) and the Quarterback (QB) winner in each game are the same player. Get ready to explore the thrilling world of football championships and discover if these two crucial roles are often filled by the same talented individual. 
+
+
+## Useful Tips
+
+
+` ctrl - Alt - I for R code chunks ` <br>
+` ctrl - Shift - M for Pipe Operation `
+
+
+
+# Prerequisites
+
+*Loading Packages*
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(tibble)
+library(lubridate)
+```
+
+
+## Super Bowl Data Set
+
+GitHub Data shown Below
+[Super Bowl Link](https://github.com/reisanar/datasets/blob/master/super_bowl.csv)
+
+```{r}
+# read data given by Professor Sanchez-Arias
+
+myurl <- "https://raw.githubusercontent.com/reisanar/datasets/master/super_bowl.csv"
+data <- read_csv(myurl)
+
+
+```
+
+# Large Data Analysis
+
+* **Analysis Questions**
+<br>
+  + How has the *Attendance* at the Super Bowl changed over the years?
+  + What teams have the greatest track record when it comes to *winning it all*?
+  + How does the *score* of the Super Bowl differ over the years and what is the *average*?
+  + If the *QB* position is so important, how many have won the *MVP* compared to other positions?
+
+
+<br><br><br><br><br>
+
+
+
+## Attendance change over the years
+
+```{r}
+
+ggplot(data, aes(x = Date, y = Attendance)) +
+  geom_point() + 
+  ggtitle("Super Bowl Attendance") +
+  guides(x =  guide_axis(angle = 90)) +
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+  
+
+  
+
+```
+
+<br><br><br><br><br>
+
+## Most Super Bowl wins 
+
+```{r}
+
+TeamWins <- table(data$'Winner') 
+TeamWins
+
+TeamWins_df <- as.data.frame(TeamWins)
+TeamWins_df
+
+TeamWins_df <- TeamWins_df[order(-TeamWins_df$Freq), ]
+TeamWins_df
+
+ggplot(TeamWins_df, aes(x = Var1, y = Freq)) +
+  geom_bar(stat = "identity") +
+  guides(x =  guide_axis(angle = 90)) +
+  labs(title = "Super Bowl Wins by Team",
+        x = "Team",
+        y= "Wins")
+  
+
+```
+
+<br><br><br><br><br>
+
+
+## Winning vs Losing Scores
+
+We are calculating the average scores, throughout all the **Super Bowls**, and taking the average of both the winning and losing scores. I also utilized *ggplot* to plot the Losing and Winning Points.
+```{r}
+
+average_win_points <- mean(data$Winning_Pts)
+average_win_points
+
+average_losing_points <- mean(data$Losing_Pts)
+average_losing_points
+
+
+average_win_points - average_losing_points
+
+ggplot() +
+  geom_point(data = data, aes(x = Date, y = Winning_Pts, color = "Winning_Pts"), size = 3) +
+  geom_point(data = data, aes(x = Date, y = Losing_Pts, color = "Losing_Pts"), size = 3) +
+  scale_color_manual(values = c("Winning_Pts" = "darkgreen", "Losing_Pts" = "blue")) +
+  guides(x = guide_axis(angle = 90)) +
+  labs(color = "Points Type") +
+  ggtitle("Winning and Losing Points Over Time") +
+  xlab("Date") +
+  ylab("Points")
+
+```
+
+<br><br><br><br><br>
+
+
+## MVP Awards
+
+```{r}
+
+QB_and_MVP <- data$MVP == data$QB_Winner
+
+ggplot(data, aes(x = QB_and_MVP)) + 
+  geom_bar(stat = "count") + 
+  scale_x_discrete(labels = c("False", "True")) + 
+  labs(title = "MVP and QB are the same player?",
+       x = "MVP and QB Winner are the Same",
+       y = "Count")
+
+```
+
+<br><br><br><br><br>
+
+
+### Interesting Statistic
+
+
+
+#### Over the years, what percentage of **Super Bowl MVPs** have been **Quarter Backs**
+
+```{r}
+Percentage_QB_MVP <- (28 / 53) * 100
+Percentage_QB_MVP
+```
+
+
+
+
+
+# Conclusion
+
+
+
+
+
