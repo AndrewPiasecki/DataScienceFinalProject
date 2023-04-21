@@ -102,20 +102,20 @@ ggplot(data, aes(x = Date, y = Attendance)) +
 ```{r}
 
 TeamWins <- table(data$'Winner') 
-TeamWins
+
 
 TeamWins_df <- as.data.frame(TeamWins)
-TeamWins_df
+
 
 TeamWins_df <- TeamWins_df[order(-TeamWins_df$Freq), ]
 TeamWins_df
 
-ggplot(TeamWins_df, aes(x = Var1, y = Freq)) +
+ggplot(TeamWins_df, aes(x = fct_reorder(Var1, -Freq), y = Freq)) +
   geom_bar(stat = "identity") +
-  guides(x =  guide_axis(angle = 90)) +
+  guides(x = guide_axis(angle = 90)) +
   labs(title = "Super Bowl Wins by Team",
-        x = "Team",
-        y= "Wins")
+       x = "Team",
+       y = "Wins")
   
 
 ```
@@ -187,7 +187,7 @@ Percentage_QB_MVP
 
 # Conclusion
 
-
+In conclusion, the Super Bowl extravaganza is a thrilling event that captures the hearts and minds of football fans worldwide. Through our exploration of attendance, winning teams, average point differences, and MVP magic, we've uncovered some fascinating insights into the game's most exciting moments. From the thrill of a close game to the excitement of watching a legendary team dominate the field, the Super Bowl has something for everyone. As we look forward to future Super Bowls, we can't wait to see what new statistics and facts emerge from these high-stakes games.
 
 
 
